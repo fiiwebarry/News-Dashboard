@@ -1,24 +1,25 @@
 import { AiFillCloseCircle } from "react-icons/ai"
 
 
-const SideBar = () => {
+// eslint-disable-next-line react/prop-types
+const SideBar = ({ isOpen, setIsOpen }) => {
     return (
-        <section className="bg-[blue] h-screen w-[300px] fixed top-0">
-            <div className="p-6">
+        <section className="bg-[blue] h-screen md:w-[250px]  fixed top-0">
+            <div className="p-4">
                 <div className="flex text-[35px] gap-4">
-                    <h2 className="">CATEGORIES</h2>
-                    <AiFillCloseCircle className="mt-3" />
+                    <h2 className="text-[#FFFF]">CATEGORIES</h2>
+                    <AiFillCloseCircle onClick={() => setIsOpen(false)} className="mt-3 text-[#FFFF]" />
 
                 </div>
 
 
-                <ul className="text-[30px] text-[#FFFF] ">
-                    <li>Entertainment</li>
-                    <li>Sports</li>
-                    <li>Global</li>
-                    <li>Technology</li>
-                    <li>Health</li>
-                    <li>Business</li>
+                <ul className="text-[30px] text-[#FFFF] mt-[40px] font-plus-jakarta-sans">
+                    <li className="mt-[20px]">Entertainment</li>
+                    <li className="mt-[20px]">Sports</li>
+                    <li className="mt-[20px]">Global</li>
+                    <li className="mt-[20px]">Technology</li>
+                    <li className="mt-[20px]">Health</li>
+                    <li className="mt-[20px]">Business</li>
 
                 </ul>
 
