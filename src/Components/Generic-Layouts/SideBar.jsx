@@ -1,4 +1,5 @@
 import { AiFillCloseCircle } from "react-icons/ai"
+import { BiSolidCategory } from "react-icons/bi"
 
 const Category = [
     { id: "Entertainment" },
@@ -11,12 +12,13 @@ const Category = [
 ];
 
 // eslint-disable-next-line react/prop-types
-const SideBar = ({ isOpen, setIsOpen }) => {
+const SideBar = ({ setIsOpen, setCurrentCategory }) => {
     return (
         <section className="bg-[blue] h-screen md:w-[250px]  fixed top-0">
             <div className="p-4">
-                <div className="flex text-[35px] gap-4">
-                    <h2 className="text-[#FFFF]">CATEGORIES</h2>
+                <div className="flex text-[35px] gap-[40px]">
+
+                    <BiSolidCategory className="mt-3 text-[#FFFF]" />
                     <AiFillCloseCircle onClick={() => setIsOpen(false)} className="mt-3 text-[#FFFF]" />
 
                 </div>
@@ -26,7 +28,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
                         return (
 
 
-                            <li key={id} className="mt-[20px]">{id}</li>
+                            <li onClick={() => setCurrentCategory(id)} key={id} className="mt-[20px]">{id}</li>
 
 
 

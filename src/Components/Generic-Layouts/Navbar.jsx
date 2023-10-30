@@ -4,7 +4,7 @@ import { SiSimilarweb } from "react-icons/si"
 import { useState } from "react"
 import SideBar from "./SideBar"
 
-const Navbar = () => {
+const Navbar = ({ setCurrentCategory }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -32,13 +32,17 @@ const Navbar = () => {
                         <p className="flex md:justify-center  text-[#00F]  font-plus-jakarta-sans">News-Hub</p>
                         <SiSimilarweb className="text-[#00F]" />
                     </div>
+                    <div>
+                        <input className="rounded w-[200px]" type="text" />
+                    </div>
+
 
                 </div>
 
             </nav>
-            {isOpen && <SideBar className="fixed" isOpen={isOpen} setIsOpen={setIsOpen} />}
+            {isOpen && <SideBar className="fixed" isOpen={isOpen} setIsOpen={setIsOpen} setCurrentCategory={setCurrentCategory} />}
 
-        </section>
+        </section >
 
     )
 }

@@ -13,28 +13,35 @@ function App() {
 
 
 
-  const getNewsHub = async () => {
 
-    try {
-      setIsLoading(true)
-      const response = await AxiosApi.get("/news-datas")
+  useEffect(() => {
+    const getNewsHub = async () => {
 
-      setNewsHub(response.data.data)
-      if (response.status === 200) {
-        setIsLoading(false)
+      try {
+        setIsLoading(true)
+        const response = await AxiosApi.get("/news-datas",
+          {
+            params: {
+              category: currentCategory ? currentCategory.toUpperCase() : undefined
+            }
+          }
+        )
+
+        setNewsHub(response.data.data)
+        if (response.status === 200) {
+          setIsLoading(false)
+        }
+
+      }
+
+      catch (error) {
+        console.log(error);
       }
 
     }
 
-    catch (error) {
-      console.log(error);
-    }
-
-  }
-  useEffect(() => {
-
     getNewsHub();
-  }, [])
+  }, [currentCategory])
 
 
   return (
