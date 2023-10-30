@@ -2,6 +2,7 @@
 
 import { GiHamburgerMenu } from "react-icons/gi"
 import { SiSimilarweb } from "react-icons/si"
+import { TbWorldSearch } from "react-icons/tb"
 import { useState } from "react"
 import SideBar from "./SideBar"
 
@@ -32,10 +33,11 @@ const Navbar = ({ setCurrentCategory, keyword, setKeyword, }) => {
                     </div>
 
                     <div className="flex mt-2 gap-1" >
-                        <span className=" md:justify-center  text-[#00415a]  font-plus-jakarta-sans">News-Hub</span>
-                        <SiSimilarweb className="text-[#00415a]" />
-                        <div>
-                            <input type="text" className="w-[300px]  h-[40px] ml-[30px] bg-[#fff4] rounded p-3" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="search keyword" />
+                        <span className=" hidden md:flex md:justify-center  text-[#00415a]  font-plus-jakarta-sans">News-Hub</span>
+                        <SiSimilarweb className="text-[#00415a] md:flex hidden" />
+                        <div className="relative">
+                            <TbWorldSearch className="absolute md:top-[14px] top-[15px] md:left-[54px] left-[30px w-[25px] text-[#ffff]" />
+                            <input type="text" className=" md:w-[300px]  w-[200px] h-[40px] md:ml-[50px] ml-[30px] md:mb-0 mb-5 text-[20px] text-[white] bg-[#00415a] border-[blue] rounded  px-8 md:px-11 z-11" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="search keyword" />
                         </div>
 
                     </div>
@@ -45,7 +47,7 @@ const Navbar = ({ setCurrentCategory, keyword, setKeyword, }) => {
                 </div>
 
             </nav>
-            {isOpen && <SideBar className="fixed" isOpen={isOpen} setIsOpen={setIsOpen} setCurrentCategory={setCurrentCategory} />}
+            {isOpen && <SideBar className="fixed " isOpen={isOpen} setIsOpen={setIsOpen} setCurrentCategory={setCurrentCategory} />}
 
         </section >
 

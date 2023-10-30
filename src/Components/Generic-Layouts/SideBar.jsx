@@ -17,7 +17,7 @@ const Category = [
 // eslint-disable-next-line react/prop-types
 const SideBar = ({ setIsOpen, setCurrentCategory }) => {
     return (
-        <section className="bg-[#00415a] h-screen md:w-[250px] w-full fixed top-0">
+        <nav className="bg-[#00415a] h-screen md:w-[250px] w-full fixed top-0">
             <div className="p-4">
                 <div className="flex text-[35px] md:gap-[140px] gap-[240px]">
 
@@ -33,8 +33,8 @@ const SideBar = ({ setIsOpen, setCurrentCategory }) => {
 
                             <li onClick={() => setCurrentCategory(id)} key={id} className="mt-[20px]">
 
-                                <div className="inline-flex gap-3">
-                                    <div className="mt-2 text-[]">{icon}</div>
+                                <div className="inline-flex gap-3 md:text-[23px]">
+                                    <div className=" md:mt-1  mt-2 text-[]">{icon}</div>
                                     {id}
                                 </div>
 
@@ -50,7 +50,7 @@ const SideBar = ({ setIsOpen, setCurrentCategory }) => {
 
             </div>
 
-        </section>
+        </nav>
     )
 }
 

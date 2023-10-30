@@ -10,7 +10,7 @@ const NewsHub = ({ isLoading, newsHub, filteredNews }) => {
         <section>
             <div className="container mx-auto w-75%">
 
-                <h2 className="flex ml-[190px] mt-4 font-plus-jakarta-sans font-semibold text-[35px] text-[#00415a] ">New Feeds</h2>
+                <h2 className="flex md:ml-[190px] ml-[20px] mt-4 font-plus-jakarta-sans font-semibold text-[35px] text-[#00415a] ">New Feeds</h2>
                 {isLoading ? (<div><h2>........Loading</h2>
 
 
@@ -24,7 +24,7 @@ const NewsHub = ({ isLoading, newsHub, filteredNews }) => {
                             <img className="w-[250px]" src={newsIcon} alt="" />
                         </div>
                         <div className=" mt-[20px]">
-                            <p className="font-plus-jakarta-sans font-semibold text-[30px] text-[#00719c] ">{headline}</p>
+                            <p className="font-plus-jakarta-sans font-semibold text-[25px] text-[#00719c] ">{headline}</p>
                             <div className="space-x-2">
                                 {hashtags.split(",").map((hashtag, index) => {
 
@@ -35,7 +35,7 @@ const NewsHub = ({ isLoading, newsHub, filteredNews }) => {
 
                                 })}
                             </div>
-                            <button className=" inline-flex  mt-[10px] ml-[2px] justify-center mx-auto font-plus-jakarta-sans   w-[100px] bg-[#00415a] rounded text-[#ffff]  p-3"> {newsSource} <PiBookOpenText /></button>
+                            <button className=" inline-flex  mt-[10px] ml-[2px] justify-center mx-auto font-plus-jakarta-sans  w-[100px] bg-[#00415a] rounded text-[#ffff]  p-3"> <span>{newsSource}</span> <PiBookOpenText /></button>
                         </div>
                     </div>)
 
