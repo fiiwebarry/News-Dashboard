@@ -1,6 +1,6 @@
 
 import AxiosApi from "../Axios-Api/Axios-Api"
-import { PiBookOpenText } from "react-icons/Pi"
+import { PiBookOpenText } from "react-icons/pi"
 import { useState, useEffect } from "react"
 
 const NewsHub = () => {
