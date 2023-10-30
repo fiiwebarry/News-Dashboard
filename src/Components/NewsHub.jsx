@@ -16,7 +16,7 @@ const NewsHub = ({ isLoading, newsHub }) => {
 
                     const { id, attributes: { headline, newsIcon, hashtags, newsSource } } = news;
 
-                    return (<div className=" lg:flex gap-[20px] rounded border bg-white  shadow-lg  w-[930px] md:w-[900px] mx-auto mt-5 p-5" key={id}>
+                    return (<div className=" lg:flex gap-[20px] rounded border bg-white  shadow-lg  w-[330px] md:w-[900px] mx-auto mt-5 p-5" key={id}>
 
                         <div>
                             <img className="w-[250px]" src={newsIcon} alt="" />
@@ -36,7 +36,7 @@ const NewsHub = ({ isLoading, newsHub }) => {
 
 
 
-                            <button className=" inline-flex  gap-1 mt-[10px] ml-[2px] justify-center mx-auto font-plus-jakarta-sans   w-[100px] bg-[#00415a] rounded text-[#ffff]  p-3"> {newsSource} <PiBookOpenText /></button>
+                            <button className=" inline-flex  mt-[10px] ml-[2px] justify-center mx-auto font-plus-jakarta-sans   w-[100px] bg-[#00415a] rounded text-[#ffff]  p-3"> {newsSource} <PiBookOpenText /></button>
                         </div>
 
 

@@ -17,9 +17,9 @@ const Category = [
 // eslint-disable-next-line react/prop-types
 const SideBar = ({ setIsOpen, setCurrentCategory }) => {
     return (
-        <section className="bg-[#00415a] h-screen md:w-[250px]  fixed top-0">
+        <section className="bg-[#00415a] h-screen md:w-[250px] w-full fixed top-0">
             <div className="p-4">
-                <div className="flex text-[35px] gap-[140px]">
+                <div className="flex text-[35px] md:gap-[140px] gap-[240px]">
 
                     <BiSolidCategory className="mt-3 text-[#FFFF]" />
                     <AiFillCloseCircle onClick={() => setIsOpen(false)} className="mt-3 text-[#FFFF]" />
