@@ -1,15 +1,16 @@
 // import { Route, Routes } from 'react-router-dom'
 
 import './App.css'
-import Home from './Pages/Home'
 import AxiosApi from './Axios-Api/Axios-Api'
 import { useState, useEffect } from "react"
+import Dashboard from './Components/Dashboard'
 
 function App() {
 
   const [isLoading, setIsLoading] = useState(false)
   const [newsHub, setNewsHub] = useState([])
   const [currentCategory, setCurrentCategory] = useState("")
+  const [keyword, setKeyword] = useState("")
 
 
 
@@ -43,11 +44,16 @@ function App() {
     getNewsHub();
   }, [currentCategory])
 
+  const filteredNews = keyword.length === 0 ? newsHub : newsHub.filter(
+    ({ headline, hashtags }) => headline.toLowerCase().include(keyword.toLowerCase()) || hashtags.toLowerCase().include(keyword.toLowerCase())
+  );
+
 
   return (
     <section>
-      <Home newsHub={newsHub} setNewsHub={setNewsHub} isLoading={isLoading} setCurrentCategory={setCurrentCategory} />
 
+
+      <Dashboard newsHub={newsHub} setNewsHub={setNewsHub} isLoading={isLoading} setCurrentCategory={setCurrentCategory} keyword={keyword} setKeyword={setKeyword} filteredNews={filteredNews} />
     </section>
   )
 }

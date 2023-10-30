@@ -1,12 +1,15 @@
+/* eslint-disable react/prop-types */
 
 import { GiHamburgerMenu } from "react-icons/gi"
 import { SiSimilarweb } from "react-icons/si"
 import { useState } from "react"
 import SideBar from "./SideBar"
 
-const Navbar = ({ setCurrentCategory }) => {
+const Navbar = ({ setCurrentCategory, keyword, setKeyword, filteredNews }) => {
 
     const [isOpen, setIsOpen] = useState(false);
+
+
 
 
     const togglebtn = () => {
@@ -28,9 +31,12 @@ const Navbar = ({ setCurrentCategory }) => {
                         </div>
                     </div>
 
-                    <div className="flex mt-2" >
-                        <p className="flex md:justify-center  text-[#00415a]  font-plus-jakarta-sans">News-Hub</p>
+                    <div className="flex mt-2 gap-1" >
+                        <span className=" md:justify-center  text-[#00415a]  font-plus-jakarta-sans">News-Hub</span>
                         <SiSimilarweb className="text-[#00415a]" />
+                        <div>
+                            <input type="text" className="w-[300px]  h-[40px] ml-[30px] bg-[#fff4] rounded p-3" onChange={(e) => setKeyword(e.target.value)} placeholder="search keyword" />
+                        </div>
 
                     </div>
 
