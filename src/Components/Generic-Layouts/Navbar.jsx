@@ -18,23 +18,22 @@ const Navbar = ({ setCurrentCategory }) => {
     return (
         <section>
             <nav className="shadow shadow-blue-500/40">
-                <div className="container mx-auto w-[90%] p-5 flex  md:gap-[350px] text-[40px]">
+                <div className=" p-5 flex  md:gap-[350px] text-[40px]">
                     <div className="flex gap-3">
                         <button onClick={togglebtn} className="mt-3">
-                            <GiHamburgerMenu className="text-[#00F]" />
+                            <GiHamburgerMenu className="text-[#00415a]" />
                         </button>
-                        <div>
-                            <p className="text-[#00F] md:flex hidden">Menu</p>
+                        <div className="mt-2">
+                            <p className="text-[#00415a] md:flex hidden">Menu</p>
                         </div>
                     </div>
 
-                    <div className="flex" >
-                        <p className="flex md:justify-center  text-[#00F]  font-plus-jakarta-sans">News-Hub</p>
-                        <SiSimilarweb className="text-[#00F]" />
+                    <div className="flex mt-2" >
+                        <p className="flex md:justify-center  text-[#00415a]  font-plus-jakarta-sans">News-Hub</p>
+                        <SiSimilarweb className="text-[#00415a]" />
+
                     </div>
-                    <div>
-                        <input className="rounded w-[200px]" type="text" />
-                    </div>
+
 
 
                 </div>
