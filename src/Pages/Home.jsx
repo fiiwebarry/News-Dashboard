@@ -1,12 +1,10 @@
 import Dashboard from "../Components/Dashboard";
-import NewsHub from "../Components/NewsHub";
 
-const Home = () => {
+
+const Home = ({ isLoading, setIsLoading, newsHub, setNewsHub, setCurrentCategory }) => {
     return (
         <section>
-            <Dashboard />
-            <NewsHub />
-
+            <Dashboard isLoading={isLoading} setIsLoading={setIsLoading} newsHub={newsHub} setNewsHub={setNewsHub} setCurrentCategory={setCurrentCategory} />
         </section>
     )
 }

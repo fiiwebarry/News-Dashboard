@@ -1,5 +1,14 @@
 import { AiFillCloseCircle } from "react-icons/ai"
 
+const Category = [
+    { id: "Entertainment" },
+    { id: "Sports" },
+    { id: "Global" },
+    { id: "Technology" },
+    { id: "Health" },
+    { id: "Business" },
+
+];
 
 // eslint-disable-next-line react/prop-types
 const SideBar = ({ isOpen, setIsOpen }) => {
@@ -11,17 +20,21 @@ const SideBar = ({ isOpen, setIsOpen }) => {
                     <AiFillCloseCircle onClick={() => setIsOpen(false)} className="mt-3 text-[#FFFF]" />
 
                 </div>
-
-
                 <ul className="text-[30px] text-[#FFFF] mt-[40px] font-plus-jakarta-sans">
-                    <li className="mt-[20px]">Entertainment</li>
-                    <li className="mt-[20px]">Sports</li>
-                    <li className="mt-[20px]">Global</li>
-                    <li className="mt-[20px]">Technology</li>
-                    <li className="mt-[20px]">Health</li>
-                    <li className="mt-[20px]">Business</li>
+                    {Category.map((items) => {
+                        const { id } = items
+                        return (
 
+
+                            <li key={id} className="mt-[20px]">{id}</li>
+
+
+
+                        )
+
+                    })}
                 </ul>
+
 
             </div>
 

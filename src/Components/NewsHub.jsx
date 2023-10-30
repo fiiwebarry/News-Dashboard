@@ -1,34 +1,10 @@
+/* eslint-disable react/prop-types */
 
-import AxiosApi from "../Axios-Api/Axios-Api"
 import { PiBookOpenText } from "react-icons/pi"
-import { useState, useEffect } from "react"
 
-const NewsHub = () => {
-    const [isLoading, setIsLoading] = useState(false)
-    const [newsHub, setNewsHub] = useState([])
 
-    const getNewsHub = async () => {
+const NewsHub = ({ isLoading, newsHub }) => {
 
-        try {
-            setIsLoading(true)
-            const response = await AxiosApi.get("/news-datas")
-
-            setNewsHub(response.data.data)
-            if (response.status === 200) {
-                setIsLoading(false)
-            }
-
-        }
-
-        catch (error) {
-            console.log(error);
-        }
-
-    }
-    useEffect(() => {
-
-        getNewsHub();
-    }, [])
 
     return (
         <section>
