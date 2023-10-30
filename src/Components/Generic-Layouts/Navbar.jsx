@@ -5,7 +5,7 @@ import { SiSimilarweb } from "react-icons/si"
 import { useState } from "react"
 import SideBar from "./SideBar"
 
-const Navbar = ({ setCurrentCategory, keyword, setKeyword, filteredNews }) => {
+const Navbar = ({ setCurrentCategory, keyword, setKeyword, }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +35,7 @@ const Navbar = ({ setCurrentCategory, keyword, setKeyword, filteredNews }) => {
                         <span className=" md:justify-center  text-[#00415a]  font-plus-jakarta-sans">News-Hub</span>
                         <SiSimilarweb className="text-[#00415a]" />
                         <div>
-                            <input type="text" className="w-[300px]  h-[40px] ml-[30px] bg-[#fff4] rounded p-3" onChange={(e) => setKeyword(e.target.value)} placeholder="search keyword" />
+                            <input type="text" className="w-[300px]  h-[40px] ml-[30px] bg-[#fff4] rounded p-3" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="search keyword" />
                         </div>
 
                     </div>

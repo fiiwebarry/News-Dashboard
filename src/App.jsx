@@ -45,7 +45,7 @@ function App() {
   }, [currentCategory])
 
   const filteredNews = keyword.length === 0 ? newsHub : newsHub.filter(
-    ({ headline, hashtags }) => headline.toLowerCase().include(keyword.toLowerCase()) || hashtags.toLowerCase().include(keyword.toLowerCase())
+    ({ attributes: { headline, hashtags } }) => headline.toLowerCase().includes(keyword.toLowerCase()) || hashtags.toLowerCase().includes(keyword.toLowerCase())
   );
 
 
